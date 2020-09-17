@@ -1,0 +1,2 @@
+let cagar = true;
+console.log (cagar);
