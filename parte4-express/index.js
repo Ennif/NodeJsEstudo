@@ -1,6 +1,20 @@
 const express = require("express");
 const app = express();
 
+const handlebars = require('express-handlebars');
+//Config
+    //Template Engine
+        app.engine('handlebars', handlebars({defaultLayout: 'main'}))
+        app.set('view engine', 'handlebars')
+
+//Conexão Banco de dados
+const Sequelize = require ('sequelize')
+const sequelize = new Sequelize ('teste','root','grandark',{
+host: "localhost",
+dialect: "mysql"
+})
+
+
 app.get("/", function(req, res){  //rota
     res.sendFile(__dirname+"/html/index.html");         // MENSAGEM
 })
