@@ -2,11 +2,11 @@ const express = require("express");
 const app = express();
 
 app.get("/", function(req, res){  //rota
-    res.send("Bem Vindo");         // MENSAGEM
+    res.sendFile(__dirname+"/html/index.html");         // MENSAGEM
 })
 
 app.get("/sobre", function(req, res){
-    res.send("PAG SOBRE TESTE ?");
+    res.sendFile(__dirname+"/html/sobre.html")
 })
 
 app.get("/blog", function(req, res){
@@ -24,3 +24,4 @@ app.listen(8081, function(){
     console.log("SERVER ON URL HTTP://8081");
 })
 
+                       
