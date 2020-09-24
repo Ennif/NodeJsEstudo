@@ -1,1 +1,11 @@
 <h1> Lista de Post: </h1>
+
+{{#each posts}}
+    <h1>{{Titulo}}</h1>
+    <p>{{Conteudo}}</p>
+    <small>{{createdAt}}</small>
+    <button>Deletar</button>
+    <hr>
+
+
+{{/each}}

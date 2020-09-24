@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 
-const handlebars = require('express-handlebars');
+
+
+const handlebars = require('express-handlebars');//nome constInvertido
 
 const bodyParser = require('body-parser');
 
@@ -20,8 +22,10 @@ const Post = require('./models/Post')
 
 //Rotas
     app.get('/', function(req, res){
-        
-        res.render('home')
+        Post.findAll({order: [['id', 'DESC']]}).then(function(posts){  //({order:[['id', 'DESC']]}) ordem de exibiçao
+            res.render('home',{posts: posts})
+        })
+       
     })
 
     app.get('/cad',function(req,res){
@@ -38,6 +42,8 @@ const Post = require('./models/Post')
       })
        
     })
+
+    app.get
 
     
 app.listen(8081, function(){

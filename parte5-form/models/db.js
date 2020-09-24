@@ -2,7 +2,9 @@
 const Sequelize = require ('sequelize');
 const sequelize = new Sequelize ('postapp','root','grandark',{
     host: "localhost",
-    dialect: "mysql"
+    dialect: "mysql",
+    query:{raw:true}
+    
 })
 
 module.exports = {
