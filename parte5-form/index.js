@@ -43,7 +43,13 @@ const Post = require('./models/Post')
        
     })
 
-    app.get
+    app.get('/deletar/:id',function(req,res){
+        Post.destroy({where: {'id': req.params.id,}}).then(function(){
+            res.send("Postagem Deletada !")
+        }).catch(function(erro){
+            res.send("está postagem n existe")
+        })
+    })
 
     
 app.listen(8081, function(){
